@@ -91,7 +91,7 @@ class PostController extends Controller
         return response()->json([
             'post' => $post->map(function ($q) {
                 foreach ($q->attachment as $file) {
-                    $file->url = 'http://localhost:8000' . Storage::url($file->storage_url);
+                    $file->url = 'https://tugaspkkbe-production.up.railway.app' . Storage::url($file->storage_url);
                 }
                 return $q;
             })
