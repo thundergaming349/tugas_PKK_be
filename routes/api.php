@@ -9,6 +9,7 @@ use App\Http\Controllers\Summary\StudentSummary;
 use App\Http\Controllers\Summary\TeacherSummary;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/user', function () {
