@@ -11,9 +11,12 @@ use App\Http\Controllers\TeacherController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+Route::get('/user', function () {
+    $user = User::query();
+    return response()->json([
+        'user' => $user
+    ]);
+});
 Route::get('/classes', [AdminController::class, 'ShowClassPublic']);
 
 Route::group([
